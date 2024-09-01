@@ -5,6 +5,9 @@ import { useChat } from 'ai/react';
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
     api: '/api/chat',
+    onError: (error) => {
+      console.error(error);
+    },
   });
 
   return (
